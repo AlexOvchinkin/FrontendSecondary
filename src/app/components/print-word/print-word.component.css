@@ -1,0 +1,44 @@
+@import "../../../assets/css/buttons.css";
+@import "../../../assets/css/algorithms.css";
+
+.print-word__wrong {
+  border-color: #F22613 !important;
+}
+
+.enter {
+  font-style: italic;
+}
+
+.print-word {
+  font-size: 1em;
+}
+
+.print-word__printed-word {
+  margin: 1.5em 0;
+  color: #444B54;
+  border-radius: 2px;
+  outline: none;
+  padding: 10px;
+  border: 1px solid lightgray;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  width: 90%;
+}
+
+
+.print-word__btn {
+  font-size: 1.2em;
+  margin: 1em 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.print-word__right-word {
+  margin: 0;
+  color: #D33257;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: underline;
+}

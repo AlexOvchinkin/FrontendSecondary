@@ -1,0 +1,19 @@
+<section class="select-word  algorithm__container">
+  <p class="select-word__title-main  algorithm__title">Выберите правильный перевод</p>
+  <div class="select-word__check-word  check-word"><span>{{mainWord.foreign}}</span></div>
+  <div class="sound-btn">
+    <p>Повторить</p>
+    <img src="http://res.cloudinary.com/dq2s2ibrg/image/upload/v1501702100/volume_white_xs1cyj.png">
+  </div>
+  <ul class="select-word__pick-list">
+    <li *ngFor="let word of pickWords"
+        [ngClass]="{
+          'select-word__pick-word': true,
+          'pick-btn': true,
+          'btn_wrong': word.isError
+        }"
+        (click)="onWordClick(word)">
+      <div> {{word.native[0]}} </div>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,52 @@
+@import "../../../assets/css/buttons.css";
+@import "../../../assets/css/algorithms.css";
+
+.bind-words_checked {
+  background-color: #953163 !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.bind-words__word-lists {
+  display: flex;
+  margin: 1em 0 0 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bind-words__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0;
+  margin: 1em 0 0 0;
+  flex-grow: 1;
+}
+
+.bind-words__list:nth-of-type(1) {
+  align-items: flex-end;
+}
+
+.bind-words__list:nth-of-type(2) {
+  align-items: flex-start;
+}
+
+.bind-words__word {
+  color: white;
+  background-color: #249991;
+  border-radius: 2px;
+  cursor: pointer;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin: 0.3em;
+  width: 7em;
+
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}

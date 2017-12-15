@@ -1,0 +1,28 @@
+<section class="print-word  algorithm__container">
+    <p class="print-word__title-main  algorithm__title">Наберите слово на клавиатуре</p>
+    <input [(ngModel)]="printedWord"
+           (keyup.enter)="printedWordEnter()"
+           [ngClass]="{
+              'print-word__printed-word': true,
+              'print-word__wrong': isWrongAnswer
+            }"
+           autocomplete="off"  id="printed-word">
+    <div class="sound-btn">
+      <p>Повторить</p>
+      <img src="http://res.cloudinary.com/dq2s2ibrg/image/upload/v1501702100/volume_white_xs1cyj.png">
+    </div>
+    <div *ngIf="isCheckMode"
+         class="pick-btn  print-word__btn"
+         (click)="checkClick()">
+      Проверить <span class="enter">&nbsp;(enter)</span>
+    </div>
+    <div *ngIf="!isCheckMode"
+         class="pick-btn  print-word__btn"
+         (click)="nextClick()">
+      Продолжить <span class="enter">&nbsp;(enter)</span>
+    </div>
+    <div *ngIf="isError"
+         class="print-word__right-word">
+      {{checkWord}}
+    </div>
+  </section>

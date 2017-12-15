@@ -1,0 +1,17 @@
+<div class="training-container" [ngSwitch]="currentAlgorithm.algorithm">
+  <app-bind-words *ngSwitchCase="'bind-words'"  
+                  [words]="arrayOfTrainingWords"
+                  [randomNumber]="randomNumber"></app-bind-words>
+  <app-print-word *ngSwitchCase="'print-word'"  
+                  [mainWord]="currentAlgorithm.word"
+                  [randomNumber]="randomNumber"></app-print-word>
+  <app-pick-letter *ngSwitchCase="'pick-letter'"  
+                   [mainWord]="currentAlgorithm.word"
+                   [randomNumber]="randomNumber"></app-pick-letter>
+  <app-pick-word *ngSwitchCase="'pick-word'"  
+                 [mainWord]="currentAlgorithm.word"
+                 [randomNumber]="randomNumber"></app-pick-word>
+  <app-pick-word-native *ngSwitchCase="'pick-word-native'" 
+                        [mainWord]="currentAlgorithm.word"
+                        [randomNumber]="randomNumber"></app-pick-word-native>                  
+</div>

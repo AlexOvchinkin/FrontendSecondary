@@ -1,0 +1,38 @@
+@import "../../../assets/css/buttons.css";
+@import "../../../assets/css/algorithms.css";
+
+/*
+.select-word__pick-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 1.6em;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.select-word__pick-word {
+  margin: 0.3em;
+}
+*/
+
+.select-word__pick-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 1em;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.select-word__check-word {
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+.select-word__pick-word {
+  margin: 0.3em;
+}

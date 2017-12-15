@@ -1,0 +1,29 @@
+<section class="bind-words  algorithm__container">
+  <p class="bind-words__title-main  algorithm__title">Выбирайте по-очереди слово и перевод</p>
+  <div class="bind-words__word-lists">
+    <ul class="bind-words__list">
+      <li *ngFor="let word of foreignWords"
+          [ngClass]="{
+            'bind-words__word': true,
+            'hide': word.hide,
+            'btn_wrong': word.error,
+            'bind-words_checked': word.marked
+          }"
+          (click)="foreignWordClick(word)">
+        <div> {{word.value}} </div>
+      </li>
+    </ul>
+    <ul class="bind-words__list">
+      <li *ngFor="let word of nativeWords"
+          [ngClass]="{
+            'bind-words__word': true,
+            'hide': word.hide,
+            'btn_wrong': word.error,
+            'bind-words_checked': word.marked
+          }"
+          (click)="nativeWordClick(word)">
+        <div> {{word.value}} </div>
+      </li>
+    </ul>
+  </div>
+</section>
