@@ -12,17 +12,19 @@
       <img src="http://res.cloudinary.com/dq2s2ibrg/image/upload/v1501702100/volume_white_xs1cyj.png">
     </div>
     <div *ngIf="isCheckMode"
-         class="pick-btn  print-word__btn"
+         class="print-word__btn"
          (click)="checkClick()">
       Проверить <span class="enter">&nbsp;(enter)</span>
     </div>
     <div *ngIf="!isCheckMode"
-         class="pick-btn  print-word__btn"
+         class="print-word__btn"
          (click)="nextClick()">
       Продолжить <span class="enter">&nbsp;(enter)</span>
     </div>
-    <div *ngIf="isError"
-         class="print-word__right-word">
-      {{checkWord}}
+    <div [ngClass]="{
+            'print-word__right-word': true,
+            'error': isError
+          }">
+      <div>{{checkWord}}</div>
     </div>
   </section>

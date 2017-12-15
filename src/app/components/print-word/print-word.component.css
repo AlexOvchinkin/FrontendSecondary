@@ -13,6 +13,10 @@
   font-size: 1em;
 }
 
+.error {
+  display: block !important;
+}
+
 .print-word__printed-word {
   margin: 1.5em 0;
   color: #444B54;
@@ -31,6 +35,17 @@
   font-size: 1.2em;
   margin: 1em 0;
   font-family: 'Roboto', sans-serif;
+
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #249991;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 
@@ -41,4 +56,7 @@
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   text-decoration: underline;
+  display: none;
+  overflow-wrap: break-word;
+  max-width: 7em;
 }

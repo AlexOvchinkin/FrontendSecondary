@@ -29,7 +29,7 @@ export class TrainingService {
       },
       {
         id: '2',
-        foreign: 'congrrrrratulation',
+        foreign: 'conggggggrrrrratulation',
         native: 'поздррррравление'
       },
       {
@@ -193,9 +193,9 @@ export class TrainingService {
 
   getAlgorithmNames(): string[] {
     return [
-      /*'pick-word',*/
+      /*'pick-word',
       'pick-word-native',
-      'pick-letter',
+      'pick-letter',*/
       'print-word'
     ];
   }

@@ -37,7 +37,7 @@ export class PrintWordComponent implements OnInit, OnChanges {
       this.check();
       return;
     }
-    
+
     this.nextClick();
   }
 
