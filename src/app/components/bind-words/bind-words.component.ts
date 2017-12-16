@@ -37,11 +37,11 @@ export class BindWordsComponent implements OnInit, OnChanges, AfterViewChecked {
   }
 
   ngAfterViewChecked(): void {
-    const elements = document.body.querySelectorAll('.bind-words__word');
+    /*const elements = document.body.querySelectorAll('.bind-words__word');
 
     for (let element of <Node[]><any>elements) {
       this.trainingService.wrap(element);
-    }
+    }*/
   }
 
 

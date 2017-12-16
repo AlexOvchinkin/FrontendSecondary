@@ -29,8 +29,8 @@ export class TrainingService {
       },
       {
         id: '2',
-        foreign: 'conggggggrrrrratulation',
-        native: 'поздррррравление'
+        foreign: 'conggggggrrrrratulations',
+        native: 'принимайте поздравления'
       },
       {
         id: '3',
@@ -193,9 +193,9 @@ export class TrainingService {
 
   getAlgorithmNames(): string[] {
     return [
-      /*'pick-word',
+      'pick-word',
       'pick-word-native',
-      'pick-letter',*/
+      'pick-letter',
       'print-word'
     ];
   }
@@ -213,12 +213,12 @@ export class TrainingService {
         });
       }
     }
-/*
+
     algorithms.unshift({
       algorithm: 'bind-words',
       words: words
     });
-*/    
+    
     return algorithms;
   }
 
@@ -260,11 +260,13 @@ export class TrainingService {
     const text: string = childElement.innerText;
     const newText: string[] = [];
   
+    if (childElement.clientWidth < divElement.clientWidth - 10) return;
+
     for (let letter of text) {
       newText.push(letter);
       childElement.innerText = newText.join("");
   
-      if (childElement.clientWidth > divElement.clientWidth - 15 && letter !== '-') {
+      if (childElement.clientWidth > divElement.clientWidth - 20 && letter !== '-') {
         const last = newText.pop();
         const beforeLast = newText.pop();
         newText.push('-');

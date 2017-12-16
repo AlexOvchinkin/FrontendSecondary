@@ -13,6 +13,9 @@
   display: flex;
   margin: 1em 0 0 0;
   font-family: 'Roboto', sans-serif;
+  justify-content: space-between;
+  /*border: 1px solid black;*/
+  width: 100%;
 }
 
 .bind-words__list {
@@ -23,15 +26,9 @@
   font-size: 1em;
   padding: 0;
   margin: 1em 0 0 0;
-  flex-grow: 1;
-}
-
-.bind-words__list:nth-of-type(1) {
-  align-items: flex-end;
-}
-
-.bind-words__list:nth-of-type(2) {
-  align-items: flex-start;
+  width: 50%;
+  /*border: 1px solid black;*/
+  align-items: center;
 }
 
 .bind-words__word {
@@ -42,11 +39,60 @@
   overflow-wrap: break-word;
   text-align: center;
   margin: 0.3em;
-  width: 7em;
-
-  padding: 0.5em 1em;
-  display: flex;
+  width: 6.5em;
+  padding: 0.5em;
+  /*display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
   letter-spacing: 1px;
+}
+
+
+@media only screen and (min-width : 350px) {
+
+  .bind-words__word {
+    font-size: 1.2em;
+    width: 6em;
+  }
+}
+
+@media only screen and (min-width : 368px) {
+
+  .bind-words__word {
+    font-size: 1.3em;
+    width: 5.8em;
+  }
+}
+
+@media only screen and (min-width : 408px) {
+
+  .bind-words__word {
+    font-size: 1.5em;
+    width: 5.6em;
+  }
+}
+
+@media only screen and (min-width : 590px) {
+
+  .bind-words__word {
+    font-size: 1.6em;
+    width: 8em;
+  
+  }
+}  
+
+@media only screen and (min-width : 760px) {
+
+  .bind-words__word {
+    font-size: 1.7em;
+    width: 10em;
+  }
+}
+
+@media only screen and (min-width : 990px) {
+
+  .bind-words__word-lists {
+    width: 75%;
+  }
+
 }
