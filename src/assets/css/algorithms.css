@@ -25,13 +25,7 @@
 @media only screen and (min-width : 350px) {
 
   .algorithm__title {
-    margin: 0;
-    text-align: left;
     font-size: 1.2em;
-    border-bottom: 1px solid #60646D;
-    padding-bottom: 0.3em;
-    font-weight: bold;
-    width: 95%;
   }
 }
 
@@ -67,11 +61,11 @@
 @media only screen and (min-width : 990px) {
 
   .algorithm__container {
-    width: 62em;
+    width: 55em;
   }
 
   .algorithm__title {
     font-size: 2em;
-    width: 30em;
+    width: 25em;
   }
 }

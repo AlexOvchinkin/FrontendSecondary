@@ -2,7 +2,6 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { ITrainingWord } from '../../types';
 import { BindWordsService, IWord } from '../../services/bind-words.service';
 import { TrainingService } from '../../services/training.service';
-import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
 
 
 
@@ -12,13 +11,14 @@ import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./bind-words.component.css'],
   providers: [BindWordsService]
 })
-export class BindWordsComponent implements OnInit, OnChanges, AfterViewChecked {
+export class BindWordsComponent implements OnInit, OnChanges {
 
   @Input() words: ITrainingWord[];
   @Input() randomNumber: number;
 
   foreignWords: IWord[] = [];
   nativeWords: IWord[] = [];
+  mergedArray: IWord[] = [];
 
   wasError: boolean;
 
@@ -33,15 +33,26 @@ export class BindWordsComponent implements OnInit, OnChanges, AfterViewChecked {
   ngOnChanges(changes: SimpleChanges): void {
     this.foreignWords = this.bindWordsService.getForeignWords(this.words);
     this.nativeWords = this.bindWordsService.getNativeWords(this.words);
+    this.mergedArray = this.mergeArrays(this.foreignWords, this.nativeWords);
     this.wasError = false;
   }
 
-  ngAfterViewChecked(): void {
-    /*const elements = document.body.querySelectorAll('.bind-words__word');
 
-    for (let element of <Node[]><any>elements) {
-      this.trainingService.wrap(element);
-    }*/
+  mergeArrays(foreignArray: IWord[], nativeArray: IWord[]): IWord[] {
+    const mergedArray: IWord[] = [];
+
+    for (let i = 0; i < foreignArray.length; i++) {
+      mergedArray.push(foreignArray[i]);
+      mergedArray.push(nativeArray[i]);
+    }
+
+    return mergedArray;
+  }
+
+
+  nativeWordClick(word: IWord): void {
+    this.markWord(this.nativeWords, word);
+    this.check(word);
   }
 
 
@@ -51,9 +62,35 @@ export class BindWordsComponent implements OnInit, OnChanges, AfterViewChecked {
   }
 
 
-  nativeWordClick(word: IWord): void {
-    this.markWord(this.nativeWords, word);
-    this.check(word);
+  mergedWordClick(word: IWord): void {
+    if (this.fromArray(this.foreignWords, word)) {
+      this.foreignWordClick(word);
+    } else {
+      this.nativeWordClick(word);
+    }
+  }
+
+
+  makeArraysEqual(mainArray: IWord[], array: IWord[]): void {
+    mainArray.forEach(item => {
+      const foundWord = array.find(word => {
+        return word.id === item.id && word.value === item.value;
+      });
+
+      if (foundWord) {
+        foundWord.marked = item.marked;
+        foundWord.error = item.error;
+      }
+    });
+  }
+
+
+  fromArray(array: IWord[], word: IWord): boolean {
+    for (let item of array) {
+      if (item.id === word.id && item.value === word.value) return true;
+    }
+
+    return false;
   }
 
 
@@ -108,9 +145,15 @@ export class BindWordsComponent implements OnInit, OnChanges, AfterViewChecked {
       foreignWord.marked = false;
       nativeWord.marked = false;
 
+      this.makeArraysEqual(this.foreignWords, this.mergedArray);
+      this.makeArraysEqual(this.nativeWords, this.mergedArray);
+
       setTimeout(() => {
         foreignWord.error = false;
         nativeWord.error = false;
+
+        this.makeArraysEqual(this.foreignWords, this.mergedArray);
+        this.makeArraysEqual(this.nativeWords, this.mergedArray);
       }, 500);
     }
   }
@@ -126,6 +169,9 @@ export class BindWordsComponent implements OnInit, OnChanges, AfterViewChecked {
 
       foreignWord.marked = false;
       nativeWord.marked = false;
+
+      this.makeArraysEqual(this.foreignWords, this.mergedArray);
+      this.makeArraysEqual(this.nativeWords, this.mergedArray);
     }
   }
 

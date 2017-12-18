@@ -26,4 +26,16 @@
       </li>
     </ul>
   </div>
+  <ul class="bind-words__list-merged">
+    <li *ngFor="let word of mergedArray"
+        [ngClass]="{
+          'bind-words__word-merged': true,
+          'hide': word.hide,
+          'btn_wrong': word.error,
+          'bind-words_checked': word.marked
+        }"
+        (click)="mergedWordClick(word)">
+      <div> {{word.value}} </div>
+    </li>
+  </ul>
 </section>
