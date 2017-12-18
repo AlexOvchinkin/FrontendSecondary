@@ -22,28 +22,28 @@
   width: 95%;
 }
 
-@media only screen and (min-width : 350px) {
+@media only screen and (min-width : 350px) and (orientation: portrait) {
 
   .algorithm__title {
     font-size: 1.2em;
   }
 }
 
-@media only screen and (min-width : 368px) {
+@media only screen and (min-width : 368px) and (orientation: portrait) {
 
   .algorithm__title {
     font-size: 1.4em;
   }
 }
 
-@media only screen and (min-width : 408px) {
+@media only screen and (min-width : 408px) and (orientation: portrait) {
 
   .algorithm__title {
     font-size: 1.6em;
   }
 }
 
-@media only screen and (min-width : 590px) {
+@media only screen and (min-width : 590px) and (orientation: portrait) {
 
   .algorithm__title {
     font-size: 1.7em;

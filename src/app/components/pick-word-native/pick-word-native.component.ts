@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, HostListener } from
 import { ITrainingWord, IPickWord } from '../../types';
 import { PickWordService } from '../../services/pick-word.service';
 import { TrainingService } from '../../services/training.service';
-import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
+
 
 @Component({
   selector: 'app-pick-word-native',
@@ -10,7 +10,7 @@ import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./pick-word-native.component.css'],
   providers: [PickWordService]
 })
-export class PickWordNativeComponent implements OnInit, OnChanges, AfterViewChecked {
+export class PickWordNativeComponent implements OnInit, OnChanges {
 
   @Input() mainWord: ITrainingWord;
   @Input() randomNumber: number;
@@ -28,19 +28,6 @@ export class PickWordNativeComponent implements OnInit, OnChanges, AfterViewChec
   ngOnChanges(changes: SimpleChanges): void {
     this.isError = false;
     this.pickWords = this.pickWordService.getPickWords(this.mainWord);
-  }
-
-  ngAfterViewChecked(): void {
-    // main word
-    const mainWordElement = document.body.querySelector('.check-word');
-    this.trainingService.wrap(mainWordElement);
-    
-    // check words
-    const elements = document.body.querySelectorAll('.pick-btn');
-
-    for (let element of <Node[]><any>elements) {
-      this.trainingService.wrap(element);
-    }
   }
 
 

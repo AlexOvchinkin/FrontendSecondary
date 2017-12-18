@@ -254,7 +254,7 @@ export class TrainingService {
 
   }
 
-
+/*
   wrap(divElement: any): void {
     const childElement = divElement.children[0];
     const text: string = childElement.innerText;
@@ -276,4 +276,5 @@ export class TrainingService {
       }
     }
   }
+*/
 }

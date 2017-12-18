@@ -24,89 +24,117 @@
 }
 
 
-@media only screen and (min-width : 312px) {
-  
-  .check-letters,
-  .check-word {
-    color: #444B54;
-    font-weight: bold;
-    font-size: 2.8em;
-    overflow-wrap: break-word;
-    max-width: 5.5em;
-    padding: 0 0.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .pick-btn {
-    padding: 0.5em 1em;
-    max-width: 7em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #249991;
-    border-radius: 2px;
-    cursor: pointer;
-    overflow-wrap: break-word;
-    letter-spacing: 1px;
-    text-align: center;
-  }
-
-  .sound-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: white;
-    padding: 0.6em 1.2em;
-    background-color: #EB6361;
-    border-radius: 2px;
-    cursor: pointer;
-    font-size: 0.8em;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 1em;
-  }
-
-
-  .sound-btn p {
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-  .sound-btn img {
-    width: 32px;
-    height: 32px;
-    margin-left: 1em;
-    transform: scale(0.8);
-  }
+.check-letters {
+  color: #444B54;
+  font-weight: bold;
+  font-size: 2.8em;
+  overflow-wrap: break-word;
+  max-width: 5.5em;
+  padding: 0 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media only screen and (min-width : 350px) {
+.check-word {
+  color: #444B54;
+  font-weight: bold;
+  font-size: 2.8em;
+  overflow-wrap: break-word;
+  padding: 0 0.2em;
+  width: 90%;
+}
 
-  .check-letters {
+.pick-btn {
+  padding: 0.5em 1em;
+  max-width: 10em;
+  color: white;
+  background-color: #249991;
+  border-radius: 2px;
+  cursor: pointer;
+  overflow-wrap: break-word;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.sound-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  padding: 0.6em 1.2em;
+  background-color: #EB6361;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 1em;
+}
+
+
+.sound-btn p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sound-btn img {
+  width: 32px;
+  height: 32px;
+  margin-left: 1em;
+  transform: scale(0.8);
+}
+
+
+@media only screen and (min-width : 350px) and (orientation: portrait) {
+
+  .check-word {
     color: #444B54;
     font-weight: bold;
     font-size: 3.5em;
   }
 
   .pick-btn {
-    padding: 0.5em 0.8em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #249991;
-    border-radius: 2px;
-    cursor: pointer;
-    overflow-wrap: break-word;
-    letter-spacing: 1px;
-    font-size: 1.2em;
+    font-size: 1.4em;
+  }
+
+  .sound-btn {
+    font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (min-width : 368px) and (orientation: portrait) {
+
+  .pick-btn {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width : 760px) {
+  
+  .pick-btn {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (min-width : 990px) {
+
+  .pick-btn {
+    font-size: 1.6em;
+  }
+
+  .sound-btn {
+    font-size: 1em;
+  }
+
+  .sound-btn img {
+    transform: scale(0.9);
   }
 }
