@@ -3,8 +3,7 @@
     <input [(ngModel)]="printedWord"
            (keyup.enter)="printedWordEnter()"
            [ngClass]="{
-              'print-word__printed-word': true,
-              'print-word__wrong': isWrongAnswer
+              'print-word__printed-word': true
             }"
            autocomplete="off"  id="printed-word">
     <div class="sound-btn">

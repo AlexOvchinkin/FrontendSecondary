@@ -17,6 +17,10 @@
 .select-word__check-word {
   margin: 0.5em 0;
   text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .select-word__pick-word {

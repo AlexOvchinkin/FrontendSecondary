@@ -56,6 +56,10 @@
   letter-spacing: 1px;
   text-align: center;
   font-size: 1.2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .sound-btn {

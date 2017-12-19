@@ -1,10 +1,6 @@
 @import "../../../assets/css/buttons.css";
 @import "../../../assets/css/algorithms.css";
 
-.print-word__wrong {
-  border-color: #F22613 !important;
-}
-
 .enter {
   font-style: italic;
 }
@@ -32,11 +28,10 @@
 
 
 .print-word__btn {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin: 1em 0;
   font-family: 'Roboto', sans-serif;
-
-  padding: 0.5em 1em;
+  padding: 0.6em 1.2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,6 +41,10 @@
   cursor: pointer;
   letter-spacing: 1px;
   text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 
@@ -59,4 +58,8 @@
   display: none;
   overflow-wrap: break-word;
   max-width: 7em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

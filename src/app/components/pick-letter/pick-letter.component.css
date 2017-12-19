@@ -34,6 +34,7 @@
 .pick-letter__check-word {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 0.8em;
 }
 
 .pick-letter__check-letter {
@@ -45,6 +46,11 @@
   border-radius: 2px;
   color: white;
   text-align: center;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .pick-letter__pick-list {
@@ -63,12 +69,52 @@
   padding: 0.1em;
   width: 1em;
   text-align: center;
-  margin: 4px 4px;
+  margin: 0.1em;
   color: white;
   background-color: #249991;
   border-radius: 2px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+@media only screen and (min-width : 350px) and (orientation: portrait) {
+
+  .pick-letter__checklist {
+    font-size: 1.2em;
+  }
+
+  .pick-letter__letter {
+    font-size: 1.1em;
+  }
+}
+
+
+@media only screen and (min-width : 368px) and (orientation: portrait) {
+
+  .pick-letter__checklist {
+    font-size: 1.3em;
+  }
+
+  .pick-letter__letter {
+    font-size: 1.2em;
+  }
+}
+
+
+@media only screen and (min-width : 760px) {
+
+  .pick-letter__checklist {
+    font-size: 1.5em;
+  }
+
+  .pick-letter__letter {
+    font-size: 1.4em;
+  }
 }
 
 

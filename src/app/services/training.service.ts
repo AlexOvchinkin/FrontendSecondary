@@ -23,19 +23,19 @@ export class TrainingService {
   getWordsFromServer(): Observable<ITrainingWord[]> {
     return Observable.of([
       {
+        id: '3',
+        foreign: 'happy new year',
+        native: 'счастливого нового года'
+      },
+      {
         id: '1',
         foreign: 'hello',
         native: 'привет'
       },
       {
         id: '2',
-        foreign: 'conggggggrrrrratulations',
+        foreign: 'congratulations',
         native: 'принимайте поздравления'
-      },
-      {
-        id: '3',
-        foreign: 'happy new year',
-        native: 'счастливого нового года'
       },
       {
         id: '4',

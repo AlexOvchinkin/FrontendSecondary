@@ -20,7 +20,6 @@
     <li *ngFor="let letter of pickLetters"
         [ngClass]="{
             'pick-letter__letter': true,
-            'pick-btn': true,
             'btn_wrong': letter.error}"
         [style.display]="letter.shown ? 'block' : 'none'"
         (click)="onPickLetterClick(letter)">
