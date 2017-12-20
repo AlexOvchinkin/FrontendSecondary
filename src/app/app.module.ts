@@ -11,10 +11,21 @@ import { PickWordNativeComponent } from './components/pick-word-native/pick-word
 import { PickLetterComponent } from './components/pick-letter/pick-letter.component';
 import { PrintWordComponent } from './components/print-word/print-word.component';
 import { BindWordsComponent } from './components/bind-words/bind-words.component';
+import { PopupQuestionWindowComponent } from './components/popup-question-window/popup-question-window.component';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 
 const routes: Routes = [
-  { path: 'training', component: TrainingComponent }
-]
+  {
+    path: 'training',
+    component: TrainingComponent,
+    canDeactivate: [CanDeactivateGuard]
+  },
+  {
+    path: 'statistics',
+    component: StatisticsComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -24,7 +35,9 @@ const routes: Routes = [
     PickWordNativeComponent,
     PickLetterComponent,
     PrintWordComponent,
-    BindWordsComponent
+    BindWordsComponent,
+    PopupQuestionWindowComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +45,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [TrainingService],
+  providers: [TrainingService, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

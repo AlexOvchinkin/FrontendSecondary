@@ -15,9 +15,11 @@ import 'rxjs/Rx';
 @Injectable()
 export class TrainingService {
 
-  changeAlgorithmStream: Subject<boolean> = new Subject();
+  changeAlgorithmStream: Subject<boolean>;
 
-  constructor() { }
+  constructor() {
+    this.changeAlgorithmStream = new Subject();
+   }
 
 
   getWordsFromServer(): Observable<ITrainingWord[]> {
@@ -254,27 +256,4 @@ export class TrainingService {
 
   }
 
-/*
-  wrap(divElement: any): void {
-    const childElement = divElement.children[0];
-    const text: string = childElement.innerText;
-    const newText: string[] = [];
-  
-    if (childElement.clientWidth < divElement.clientWidth - 10) return;
-
-    for (let letter of text) {
-      newText.push(letter);
-      childElement.innerText = newText.join("");
-  
-      if (childElement.clientWidth > divElement.clientWidth - 20 && letter !== '-') {
-        const last = newText.pop();
-        const beforeLast = newText.pop();
-        newText.push('-');
-        newText.push(beforeLast);
-        newText.push(last);
-        childElement.innerText = newText.join("");
-      }
-    }
-  }
-*/
 }

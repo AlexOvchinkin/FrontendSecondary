@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainingService } from '../../services/training.service';
 import { ITrainingWord, IAlgorithm } from '../../types';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 
 @Component({
@@ -13,6 +15,10 @@ export class TrainingComponent implements OnInit {
   currentAlgorithm: IAlgorithm = { algorithm: 'none' };
   arrayOfTrainingWords: ITrainingWord[];
   randomNumber: number;
+  allowExit: boolean = false;
+  subject: Subject<boolean> = new Subject();
+  popupHide: boolean = true;
+  popupTimeoutID: any;
 
   constructor(private trainingService: TrainingService) { }
 
@@ -24,6 +30,7 @@ export class TrainingComponent implements OnInit {
         this.changeCurrentAlgorithm(data);
       });
   }
+
 
   showNewWords(): void {
     this.trainingService
@@ -54,4 +61,22 @@ export class TrainingComponent implements OnInit {
   }
 
 
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+
+    this.popupHide = false;
+
+    this.popupTimeoutID = setTimeout(() => {
+      this.popupHide = true;
+      this.subject.next(this.allowExit);
+    }, 3000);
+
+    return this.subject;
+  }
+
+  popupHandler(res): void {
+    this.popupHide = true;
+    this.allowExit = res;
+    clearTimeout(this.popupTimeoutID);
+    this.subject.next(res);
+  }
 }
