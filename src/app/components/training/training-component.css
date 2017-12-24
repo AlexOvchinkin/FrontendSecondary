@@ -1,3 +1,22 @@
 .popup-hide {
   display: none !important;
 }
+
+.btn-exit {
+  display: block;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  font-size: 1em;
+  color: #60646D;
+  font-weight: bolder;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (min-width : 760px) {
+
+  .btn-exit {
+    font-size: 1.5em;
+    top: 0.6em;
+  }
+}

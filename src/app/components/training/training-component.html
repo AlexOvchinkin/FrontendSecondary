@@ -1,5 +1,5 @@
 <div class="training-container" [ngSwitch]="currentAlgorithm.algorithm">
-  <a routerLink="/statistics">go out</a>
+  <a class="btn-exit" routerLink="/statistics">Выход</a>
   <app-bind-words *ngSwitchCase="'bind-words'"  
                   [words]="arrayOfTrainingWords"
                   [randomNumber]="randomNumber"></app-bind-words>

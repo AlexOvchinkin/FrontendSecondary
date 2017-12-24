@@ -1,0 +1,61 @@
+@import "../../../assets/css/buttons.css";
+@import "../../../assets/css/algorithms.css";
+
+.statistics__info:nth-child(1) {
+  margin-bottom: 3.5em;
+}
+
+.statistics__title {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.statistics__quantity {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.5em 0;
+  padding: 0;
+  text-align: center;
+}
+
+.statistics__btn {
+  text-decoration: none;
+  display: block;
+}
+
+
+@media only screen and (min-width : 350px) and (orientation: portrait) {
+
+  .statistics__title {
+    font-size: 2em;
+  }
+
+  .statistics__quantity {
+    font-size: 2.5em;
+  }
+}
+
+
+@media only screen and (min-width : 760px) {
+
+  .statistics {
+    flex-direction: row !important;
+    justify-content: space-around !important; 
+    width: 45em  !important;
+    margin-top: 10em;
+  }
+
+  .statistics__info:nth-child(1) {
+    margin-bottom: 0;
+  }
+
+  .statistics__title {
+    font-size: 2em;
+  }
+
+  .statistics__quantity {
+    font-size: 2.5em;
+  }
+}

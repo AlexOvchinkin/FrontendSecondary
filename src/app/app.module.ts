@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'statistics',
     component: StatisticsComponent
+  },
+  {
+    path: '',
+    component: StatisticsComponent
   }
 ];
 
