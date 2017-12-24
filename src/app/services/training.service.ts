@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-/*
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/from';
-import 'rxjs/add/observable/forkJoin';
-*/
 import { ITrainingWord, IAlgorithm } from '../types';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/Rx';
